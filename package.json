@@ -1,0 +1,30 @@
+{
+  "name": "audityzer-auditorsec-integration",
+  "version": "1.0.0",
+  "description": "Integration platform for Audityzer and AuditorSEC Web3 smart contract audit",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "install-all": "npm install && npm install --workspace=client && npm install --workspace=server",
+    "dev": "concurrently \"npm --workspace=client start\" \"npm --workspace=server start\"",
+    "build": "npm --workspace=client run build && npm --workspace=server run build",
+    "test": "npm --workspace=client test -- --watchAll=false && npm --workspace=server test",
+    "lint": "npm --workspace=client run lint && npm --workspace=server run lint"
+  },
+  "keywords": [
+    "web3",
+    "smart-contract",
+    "security",
+    "audit",
+    "audityzer",
+    "auditorsec"
+  ],
+  "author": "rigoryanych",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
